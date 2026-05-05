@@ -54,7 +54,31 @@
     <div class="invitation-parents"></div>
   </section>
 
-  <!-- ====== Countdown ====== -->
+  
+
+  <!-- ====== Our Story ======
+  <section class="section story fade-in">
+    <div class="story-header">
+      <div class="section-label">Our Story</div>
+      <div class="section-title" id="story-title"></div>
+    </div>
+    <p class="story-content"></p>
+    <div class="story-images"></div>
+  </section> -->
+
+  <!-- ====== Gallery ====== -->
+  <section class="section gallery fade-in">
+    <div class="gallery-header">
+      <div class="section-label">Gallery</div>
+    </div>
+    <div class="gallery-grid"></div>
+    <div class="gallery-more">
+      <button class="btn-gallery-more" type="button">더보기</button>
+    </div>
+  </section>
+
+
+<!-- ====== Countdown ====== -->
   <section class="section countdown fade-in">
     <div class="countdown-grid">
       <div class="countdown-item">
@@ -97,27 +121,6 @@
     </div>
   </section>
 
-  <!-- ====== Our Story ====== -->
-  <section class="section story fade-in">
-    <div class="story-header">
-      <div class="section-label">Our Story</div>
-      <div class="section-title" id="story-title"></div>
-    </div>
-    <p class="story-content"></p>
-    <div class="story-images"></div>
-  </section>
-
-  <!-- ====== Gallery ====== -->
-  <section class="section gallery fade-in">
-    <div class="gallery-header">
-      <div class="section-label">Gallery</div>
-      <div class="section-title">우리의 순간들</div>
-    </div>
-    <div class="gallery-grid"></div>
-    <div class="gallery-more">
-      <button class="btn-gallery-more" type="button">더보기</button>
-    </div>
-  </section>
 
   <!-- ====== Location ====== -->
   <section class="section location fade-in">
@@ -222,4 +225,23 @@
 <script src="config.js"></script>
 <script src="script.js"></script>
 </body>
+<script>
+  // 1. 마우스 오른쪽 클릭 금지
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert('정보 보호를 위해 우클릭을 제한합니다.');
+  });
+
+  // 2. 드래그(블록 지정) 금지
+  document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+  });
+
+  // 3. 키보드 단축키(개발자 도구, 소스 보기) 금지
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
+      return false;
+    }
+  };
+</script>
 </html>
